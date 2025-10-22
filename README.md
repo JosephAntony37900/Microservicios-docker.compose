@@ -62,7 +62,7 @@ La API utiliza la red interna de Docker para conectarse a PostgreSQL usando el n
 
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
-| `GET` | `http://54.224.213.119:5000/Pinto` | Retorna el nombre completo del autor (en mi caso, mi nombre "José Antonio Pinto Aguilar" |
+| `GET` | `http://54.224.213.119:5000/Pinto` | Retorna el nombre completo del autor (en mi caso, mi nombre "José Antonio Pinto Aguilar") |
 | `GET` | `http://54.224.213.119:5000/usuarios` | Retorna todos los usuarios de la base de datos |
 | `POST` | `http://54.224.213.119:5000/usuarios` | Añade un nuevo usuario a la base de datos |
 
