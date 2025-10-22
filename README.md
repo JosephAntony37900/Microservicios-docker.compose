@@ -62,7 +62,7 @@ La API utiliza la red interna de Docker para conectarse a PostgreSQL usando el n
 
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
-| `GET` | `http://54.224.213.119:5000/Pinto` | Retorna el nombre completo del autor |
+| `GET` | `http://54.224.213.119:5000/Pinto` | Retorna el nombre completo del autor (en mi caso, mi nombre "José Antonio Pinto Aguilar" |
 | `GET` | `http://54.224.213.119:5000/usuarios` | Retorna todos los usuarios de la base de datos |
 | `POST` | `http://54.224.213.119:5000/usuarios` | Añade un nuevo usuario a la base de datos |
 
@@ -120,8 +120,8 @@ Antes de comenzar, asegúrate de tener instalado:
 
 ### 1. Clonar el Repositorio
 ```bash
-git clone <URL_DEL_REPOSITORIO>
-cd <NOMBRE_DEL_PROYECTO>
+git clone https://github.com/JosephAntony37900/Microservicios-docker.compose.git
+cd Microservicios-docker.compose
 ```
 
 ### 2. Construir las Imágenes
