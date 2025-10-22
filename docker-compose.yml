@@ -4,19 +4,19 @@ services:
 
   # Servicio 3: Base de Datos (PostgreSQL)
   db:
-    image: postgres:14-alpine # Usamos una imagen específica y ligera
+    image: postgres:14-alpine # Uso una imagen específica y ligera
     container_name: db_postgres
     restart: always
     environment:
-      # Requisito: Nombre de la DB 'jose_antonio'
+      # Nombre de la DB 'jose_antonio'
       POSTGRES_DB: jose_antonio
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password_seguro_123
     ports:
-      # Exponemos el puerto de la DB al host (Opcional, bueno para depurar)
+      # Expongo el puerto de la DB al host
       - "5432:5432"
     volumes:
-      # Requisito: Volumen con nombre para persistencia
+      # Volumen con nombre para persistencia
       - db-data:/var/lib/postgresql/data
 
   # Servicio 2: Backend (API)
@@ -28,13 +28,13 @@ services:
       - "5000:5000"
     environment:
       # Variables de entorno para conectar la API a la DB
-      POSTGRES_HOST: db # ¡Clave! 'db' es el nombre del servicio de la DB
-      POSTGRES_DB: jose_antonio # Debe coincidir con el de la DB
+      POSTGRES_HOST: db
+      POSTGRES_DB: jose_antonio
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password_seguro_123
       POSTGRES_PORT: 5432
     depends_on:
-      # Requisito: Asegura que la DB inicie antes que la API
+      # Asegura que la DB inicie antes que la API
       - db
 
   # Servicio 1: Frontend (Servidor Web)
@@ -43,13 +43,13 @@ services:
     container_name: frontend_web
     restart: always
     ports:
-      # Requisito: Exponer el puerto 3000
+      # Exponer el puerto 3000
       - "3000:3000"
     depends_on:
       # El frontend depende de que la API esté lista
       - api
 
-# Requisito: Definición explícita del volumen (no anónimo)
+# Definición explícita del volumen (no anónimo)
 volumes:
   db-data:
     driver: local
